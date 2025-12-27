@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function AppHome() {
   return (
     <>
-      {/* SEO Metadata */}
+      {/* SEO and Google Fonts */}
       <Head>
         <title>Memory Weaver - The Stories We Live, The Memories We Keep</title>
         <meta
@@ -13,7 +13,7 @@ export default function AppHome() {
         />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Architects+Daughter&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -26,18 +26,19 @@ export default function AppHome() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
+          textAlign: 'center',
           padding: '2rem',
-          background: '#e3f2fd',
-          fontFamily: "'Architects Daughter', cursive",
+          background: 'linear-gradient(to bottom, #FFDEE9, #B5FFFC)',
+          fontFamily: "'DM Sans', sans-serif",
         }}
       >
-        {/* Header */}
+        {/* Page Header */}
         <h1
           style={{
-            fontSize: '3rem',
-            color: '#1e88e5',
+            fontSize: '4rem',
+            color: '#FF6F61',
             marginBottom: '1rem',
-            textAlign: 'center',
+            fontFamily: "'Architects Daughter', cursive",
           }}
         >
           Memory Weaver
@@ -48,7 +49,6 @@ export default function AppHome() {
           style={{
             fontSize: '1.5rem',
             color: '#555',
-            textAlign: 'center',
             maxWidth: '700px',
             marginBottom: '2rem',
           }}
@@ -61,63 +61,53 @@ export default function AppHome() {
           style={{
             display: 'flex',
             gap: '1rem',
-            flexWrap: 'wrap',
-            alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: '1rem',
+            flexWrap: 'wrap',
           }}
         >
+          {/* Library Button */}
           <Link href="/app/library">
             <a
               style={{
                 padding: '1rem 2rem',
-                background: '#1e88e5',
-                color: 'white',
+                background: '#FF6F61',
+                color: '#fff',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 fontSize: '1.2rem',
                 fontWeight: 'bold',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 transition: 'background-color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = '#1565c0')}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = '#1e88e5')}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#E5564C')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#FF6F61')}
             >
               Explore Library
             </a>
           </Link>
+
+          {/* Profiles Button */}
           <Link href="/app/children/[id]">
             <a
               style={{
                 padding: '1rem 2rem',
                 background: '#fff',
-                color: '#1e88e5',
+                color: '#FF6F61',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                border: '2px solid #1e88e5',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                border: '2px solid #FF6F61',
                 fontSize: '1.2rem',
                 fontWeight: 'bold',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 transition: 'background-color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = '#f3f3f3')}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#FFF3F0')}
               onMouseLeave={(e) => (e.target.style.backgroundColor = '#fff')}
             >
               View Profiles
             </a>
           </Link>
         </div>
-
-        {/* Footer */}
-        <p
-          style={{
-            fontSize: '1rem',
-            color: '#999',
-            textAlign: 'center',
-          }}
-        >
-          © 2025 Memory Weaver | A Treasured Tales Project
-        </p>
       </div>
     </>
   );
