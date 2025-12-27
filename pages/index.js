@@ -1,73 +1,117 @@
+import Head from 'next/head';
 import Link from 'next/link';
 
 export default function AppHome() {
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      background: '#f9f9f9',
-      padding: '2rem',
-    }}>
-      <div style={{
-        maxWidth: '700px',
-        textAlign: 'center',
-        background: 'white',
-        borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-        padding: '2rem 1.5rem',
-      }}>
-        <h1 style={{
-          fontSize: '2.5rem',
-          marginBottom: '1rem',
-          color: '#6b46c1',
-          fontWeight: 'bold',
-        }}>
-          Welcome to Treasured Tales
-        </h1>
-        <p style={{
-          fontSize: '1.2rem',
-          color: '#555',
-          marginBottom: '2rem',
-        }}>
-          Your family memories deserve a special place. Generate storybooks and preserve precious moments with ease.
-        </p>
-        <div style={{
+    <>
+      {/* SEO and Google Fonts */}
+      <Head>
+        <title>Memory Weaver - The Stories We Live, The Memories We Keep</title>
+        <meta
+          name="description"
+          content="Transform your child's everyday adventures into beautiful, personalized storybooks. Capture memories, generate AI-powered narratives, and download print-ready treasures."
+        />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Architects+Daughter&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
+      {/* Page Content */}
+      <div
+        style={{
+          minHeight: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
-          gap: '1rem',
-          marginTop: '1.5rem',
-        }}>
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: '2rem',
+          background: 'linear-gradient(to bottom, #FFDEE9, #B5FFFC)',
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+      >
+        {/* Page Header */}
+        <h1
+          style={{
+            fontSize: '4rem',
+            color: '#FF6F61',
+            marginBottom: '1rem',
+            fontFamily: "'Architects Daughter', cursive",
+          }}
+        >
+          Memory Weaver
+        </h1>
+
+        {/* Subheading */}
+        <p
+          style={{
+            fontSize: '1.5rem',
+            color: '#555',
+            maxWidth: '700px',
+            marginBottom: '2rem',
+          }}
+        >
+          Transform your family’s everyday adventures into beautiful, personalized storybooks. Capture memories, generate AI-powered narratives, and preserve treasures to share forever.
+        </p>
+
+        {/* Buttons */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '1rem',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          {/* Library Button */}
           <Link href="/app/library">
-            <a style={{
-              padding: '1rem 2rem',
-              background: '#6b46c1',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: 'bold',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-            }}>
-              Visit Library
+            <a
+              style={{
+                padding: '1rem 2rem',
+                background: '#FF6F61',
+                color: '#fff',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontSize: '1.2rem',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#E5564C')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#FF6F61')}
+            >
+              Explore Library
             </a>
           </Link>
+
+          {/* Profiles Button */}
           <Link href="/app/children/[id]">
-            <a style={{
-              padding: '1rem 2rem',
-              background: '#f3f3f3',
-              color: '#6b46c1',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: 'bold',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-              border: '1px solid #ddd',
-            }}>
+            <a
+              style={{
+                padding: '1rem 2rem',
+                background: '#fff',
+                color: '#FF6F61',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                border: '2px solid #FF6F61',
+                fontSize: '1.2rem',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#FFF3F0')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#fff')}
+            >
               View Profiles
             </a>
           </Link>
+        </div>
+      </div>
+    </>
+  );
+}
         </div>
       </div>
     </div>
