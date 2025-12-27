@@ -17,17 +17,26 @@ export default function AppHome() {
         />
       </Head>
 
-      <div style={{ fontFamily: "'DM Sans', sans-serif", backgroundColor: '#f9f9f9' }}>
+      {/* Page Content */}
+      <div
+        style={{
+          fontFamily: "'DM Sans', sans-serif",
+          backgroundImage: 'url("/background.jpg")', // Replace with your image path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: '#fff',
+        }}
+      >
         {/* Header Section */}
-        <header style={{ textAlign: 'center', padding: '3rem 1rem', backgroundColor: '#FFFFFF' }}>
-          <h1 style={{ fontSize: '4rem', color: '#8736de', margin: 0 }}>Treasured Tales</h1>
-          <p style={{ fontSize: '1.5rem', color: '#555', marginTop: '1rem' }}>The Stories We Live</p>
+        <header style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+          <h1 style={{ fontSize: '4rem', margin: 0 }}>Treasured Tales</h1>
+          <p style={{ fontSize: '1.5rem', marginTop: '1rem' }}>The Stories We Live</p>
         </header>
 
         <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
           <section style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p style={{ fontSize: '1.2rem', color: '#555', maxWidth: '800px', margin: '0 auto' }}>
+            <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
               Transform your child's real-life adventures into personalized storybooks. Preserve precious memories, bring them to life with AI-crafted narratives, and create keepsakes your family will treasure for generations.
             </p>
             <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginTop: '2rem' }}>
@@ -63,10 +72,8 @@ export default function AppHome() {
           </section>
 
           {/* How It Works Section */}
-          <section>
-            <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '3rem', color: '#8736de' }}>
-              How It Works
-            </h2>
+          <section style={{ marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '3rem' }}>How It Works</h2>
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
               <div style={{ textAlign: 'center', maxWidth: '300px' }}>
                 <h3 style={{ fontSize: '1.5rem', color: '#8736de' }}>Capture Moments</h3>
@@ -84,8 +91,8 @@ export default function AppHome() {
           </section>
 
           {/* Pricing Section */}
-          <section style={{ marginTop: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '3rem', color: '#8736de' }}>Simple, Transparent Pricing</h2>
+          <section style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Simple, Transparent Pricing</h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
               {/* Free Plan */}
               <div
@@ -153,7 +160,7 @@ export default function AppHome() {
           </section>
         </main>
 
-        {/* Footer Section */}
+        {/* Footer */}
         <footer style={{ textAlign: 'center', padding: '3rem 1rem', backgroundColor: '#FFFFFF' }}>
           <p style={{ fontSize: '1rem', color: '#999' }}>
             Made with ❤️ for families everywhere | <Link href="/privacy"><a style={{ color: '#8736de' }}>Privacy Policy</a></Link>
