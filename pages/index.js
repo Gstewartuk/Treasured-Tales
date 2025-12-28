@@ -6,7 +6,7 @@ export default function AppHome() {
   const isBrowser = typeof window !== 'undefined'; // Check if the window object exists
 
   useEffect(() => {
-    if (isBrowser) {  // Ensure code runs only in a browser environment
+    if (isBrowser) { // Ensure code runs only in a browser environment
       const storedTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' theme
       document.body.setAttribute('data-theme', storedTheme);
       setTheme(storedTheme);
@@ -14,7 +14,7 @@ export default function AppHome() {
   }, []); // Only run this effect on mount
 
   const toggleTheme = () => {
-    if (isBrowser) {  // Check again for browser environment
+    if (isBrowser) { // Check again for browser environment
       const newTheme = theme === 'light' ? 'dark' : 'light';
       document.body.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
@@ -47,77 +47,88 @@ export default function AppHome() {
             <a style={{ color: theme === 'dark' ? '#fff' : '#333', fontWeight: '600', textDecoration: 'none' }}>Log In</a>
           </Link>
           <Link href="/get-started" passHref>
- <a>           
-  {/* Top Section */}
-<section
-  style={{
-    backgroundImage: 'url(/background.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    padding: '5rem 2rem',
-    textAlign: 'center',
-    color: '#fff',
-  }}
->
-  <h1
-    style={{
-      fontSize: '3rem',
-      fontFamily: "'Playfair Display', serif",
-      fontWeight: 'bold',
-      marginBottom: '1rem',
-    }}
-  >
-    Treasured Tales
-  </h1>
-  <h2
-    style={{
-      fontSize: '1.5rem',
-      marginBottom: '1.5rem',
-      fontWeight: '300',
-      color: 'rgba(255,255,255,0.8)',
-    }}
-  >
-    The Stories We Live
-  </h2>
-  <p
-    style={{
-      fontSize: '1rem',
-      maxWidth: '600px',
-      margin: '0 auto 2rem',
-    }}
-  >
-    Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories, bring them to life with AI-crafted narratives, and create keepsakes your family will treasure for generations.
-  </p>
-  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-    <button
-      style={{
-        padding: '1rem 2rem',
-        backgroundColor: '#ff6200',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-      }}
-    >
-      Start Your First Storybook
-    </button>
-    <button
-      style={{
-        padding: '1rem 2rem',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-      }}
-    >
-      See How It Works
-    </button>
-  </div>
-</section>
+            <a style={{ color: theme === 'dark' ? '#fff' : '#333', fontWeight: '600', textDecoration: 'none' }}>Get Started</a>
+          </Link>
+        </div>
+      </header>
 
+      {/* Hero Section */}
+      <section
+        style={{
+          backgroundImage: 'url(/background.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: '5rem 2rem',
+          textAlign: 'center',
+          color: '#fff',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: '3rem',
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+          }}
+        >
+          Treasured Tales
+        </h1>
+        <h2
+          style={{
+            fontSize: '1.5rem',
+            marginBottom: '1.5rem',
+            fontWeight: '300',
+            color: 'rgba(255,255,255,0.8)',
+          }}
+        >
+          The Stories We Live
+        </h2>
+        <p
+          style={{
+            fontSize: '1rem',
+            maxWidth: '600px',
+            margin: '0 auto 2rem',
+          }}
+        >
+          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories, bring them to life with AI-crafted narratives, and create keepsakes your family will treasure for generations.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <button
+            style={{
+              padding: '1rem 2rem',
+              backgroundColor: '#ff6200',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            Start Your First Storybook
+          </button>
+          <button
+            style={{
+              padding: '1rem 2rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            See How It Works
+          </button>
+        </div>
+      </section>
+
+      {/* Additional Sections */}
+      <section>
+        {/* 'How It Works' content */}
+      </section>
+    </div>
+  );
+}
       {/* Additional sections */}
       {/* Add your 'How It Works' section here */}
     {/* How It Works Section */}
