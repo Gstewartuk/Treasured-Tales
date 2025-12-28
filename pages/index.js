@@ -208,14 +208,24 @@ export default function AppHome() {
             </div>
           </section>
         </main>
-
-        <footer
-  style={{ textAlign: 'center', padding: '3rem 1rem', backgroundColor: '#FFFFFF' }}
+{/* Footer */}
+<footer
+  style={{
+    textAlign: 'center',
+    padding: '3rem 1rem',
+    backgroundColor: '#FFFFFF',
+  }}
 >
   <p style={{ fontSize: '1rem', color: '#999' }}>
-    Made with ❤️ for families everywhere | 
-    <Link href="/privacy">
-      <a style={{ color: '#8736de' }}>Privacy Policy</a>
-    </Link>
+    Made with ❤️ for families everywhere |{' '}
+    <a
+      href="/privacy"
+      style={{
+        color: '#8736de',
+        textDecoration: 'none',
+      }}
+    >
+      Privacy Policy
+    </a>
   </p>
 </footer>
