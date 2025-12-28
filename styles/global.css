@@ -1,8 +1,9 @@
+/* Remove underlines from all links */
 a {
-  text-decoration: none !important; /* Force override browser defaults */
+  text-decoration: none !important; /* Force browser to not show underline */
 }
 a:visited {
-  text-decoration: none !important; /* Ensure no underline for visited links */
+  text-decoration: none !important; /* Remove underline for visited links */
 }
 a:hover {
   text-decoration: none !important; /* Prevent underline on hover */
