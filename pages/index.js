@@ -175,6 +175,6 @@ export default function AppHome() {
     </div>
   </div>
 </section>
- </div> {/* This is the final </div> wrapping the content */}
+</div>
 );
 }
