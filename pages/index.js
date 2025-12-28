@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link'; // Import Link for navigation
+import Link from 'next/link';
 
 export default function AppHome() {
-  const [theme, setTheme] = useState('light'); // Default theme state
-  const isBrowser = typeof window !== 'undefined'; // Check if executing in the browser
+  const [theme, setTheme] = useState('light');
+  const isBrowser = typeof window !== 'undefined';
 
-  // Initialize theme only if in the browser
   useEffect(() => {
     if (isBrowser) {
-      const storedTheme = localStorage.getItem('theme') || 'light'; // Retrieve or set default
-      document.body.setAttribute('data-theme', storedTheme); // Apply theme to body
-      setTheme(storedTheme); // Update state
+      const storedTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', storedTheme);
+      setTheme(storedTheme);
     }
   }, [isBrowser]);
 
-  // Handle theme toggle
   const toggleTheme = () => {
     if (isBrowser) {
-      const newTheme = theme === 'light' ? 'dark' : 'light'; // Determine new theme
-      document.body.setAttribute('data-theme', newTheme); // Update theme attribute
-      localStorage.setItem('theme', newTheme); // Persist theme in local storage
-      setTheme(newTheme); // Update state
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      setTheme(newTheme);
     }
   };
 
-  // Header Section
   return (
     <>
       {/* Header */}
@@ -39,26 +36,15 @@ export default function AppHome() {
           color: theme === 'dark' ? '#fff' : '#333',
         }}
       >
-        <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
+        <span style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
           Memory Weaver
-        </h1>
+        </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button
-            onClick={toggleTheme}
-            style={{
-              backgroundColor: 'transparent',
-              border: 'none',
-              fontSize: '1.2rem',
-              cursor: 'pointer',
-              color: theme === 'dark' ? '#fff' : '#333',
-            }}
-          >
+          <button onClick={toggleTheme} style={{ fontSize: '1.2rem', cursor: 'pointer', backgroundColor: 'transparent', border: 'none' }}>
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
           <Link href="/login">
-            <a style={{ color: theme === 'dark' ? '#fff' : '#333', textDecoration: 'none', fontWeight: '600' }}>
-              Log In
-            </a>
+            <a style={{ color: theme === 'dark' ? '#fff' : '#333', fontWeight: '600', textDecoration: 'none' }}>Log In</a>
           </Link>
           <Link href="/get-started">
             <a
@@ -78,12 +64,26 @@ export default function AppHome() {
       </header>
 
       {/* Hero Section */}
-      <main style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>Treasured Tales</h2>
-        <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: theme === 'dark' ? '#aaa' : '#555' }}>
-          Transform your child's real-life adventures into personalized storybooks made just for them.
+      <div
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/background-image.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '90vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          color: '#fff',
+          flexDirection: 'column',
+        }}
+      >
+        <h1 style={{ fontSize: '4rem', fontFamily: "'Playfair Display', serif", fontWeight: '700' }}>Treasured Tales</h1>
+        <h2 style={{ fontSize: '1.5rem', fontFamily: "'Open Sans', sans-serif", marginBottom: '1.5rem' }}>The Stories We Live</h2>
+        <p style={{ maxWidth: '800px', fontSize: '1.2rem', marginBottom: '2rem' }}>
+          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create keepsakes your family will treasure for generations.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: '1rem' }}>
           <Link href="/start-storybook">
             <a
               style={{
@@ -102,7 +102,7 @@ export default function AppHome() {
             <a
               style={{
                 padding: '1rem 2rem',
-                backgroundColor: theme === 'dark' ? '#555' : '#333',
+                backgroundColor: '#333',
                 color: '#fff',
                 textDecoration: 'none',
                 borderRadius: '4px',
@@ -113,24 +113,21 @@ export default function AppHome() {
             </a>
           </Link>
         </div>
-      </main>
+      </div>
 
-      {/* Footer */}
-      <footer
-        style={{
-          textAlign: 'center',
-          padding: '3rem 1rem',
-          backgroundColor: theme === 'dark' ? '#222' : '#f9f9f9',
-          color: theme === 'dark' ? '#fff' : '#555',
-        }}
-      >
-        <p style={{ fontSize: '1rem', color: theme === 'dark' ? '#aaa' : '#999' }}>
-          Made with ❤️ for families everywhere |{' '}
-          <Link href="/privacy">
-            <a style={{ color: '#8736de', textDecoration: 'none' }}>Privacy Policy</a>
-          </Link>
-        </p>
-      </footer>
+      {/* How It Works Section */}
+      <section style={{ padding: '4rem 2rem', backgroundColor: theme === 'dark' ? '#444' : '#f9f9f9', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>How It Works</h2>
+        {/* Cards */}
+        <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          {/* Card 1 */}
+          <div style={{ padding: '2rem', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
+            <img src="/icons/capture-icon.svg" alt="Capture Moments" />
+            <h3>Capture Moments</h3>
+          </div>
+          ...
+        </div>
+      </section>
     </>
   );
 }
