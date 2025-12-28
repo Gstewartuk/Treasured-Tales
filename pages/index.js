@@ -47,7 +47,7 @@ export default function AppHome() {
             <a style={{ color: theme === 'dark' ? '#fff' : '#333', fontWeight: '600', textDecoration: 'none' }}>Log In</a>
           </Link>
           <Link href="/get-started" passHref>
-            <a
+ <a>           
   {/* Top Section */}
 <section
   style={{
