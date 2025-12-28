@@ -48,20 +48,75 @@ export default function AppHome() {
           </Link>
           <Link href="/get-started" passHref>
             <a
-              style={{
-                padding: '0.5rem 1rem',
-                backgroundColor: '#ff6200',
-                color: '#fff',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: 'bold',
-              }}
-            >
-              Get Started
-            </a>
-          </Link>
-        </div>
-      </header>
+        {/* Top Section */}
+<section
+  style={{
+    backgroundImage: 'url(/images/hero-background.jpg)', // Ensure this image exists in public/images
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: '5rem 2rem',
+    textAlign: 'center',
+    color: '#fff',
+  }}
+>
+  <h1
+    style={{
+      fontSize: '3rem',
+      fontFamily: "'Playfair Display', serif",
+      fontWeight: 'bold',
+      marginBottom: '1rem',
+    }}
+  >
+    Treasured Tales
+  </h1>
+  <h2
+    style={{
+      fontSize: '1.5rem',
+      marginBottom: '1.5rem',
+      fontWeight: '300',
+      color: 'rgba(255,255,255,0.8)',
+    }}
+  >
+    The Stories We Live
+  </h2>
+  <p
+    style={{
+      fontSize: '1rem',
+      maxWidth: '600px',
+      margin: '0 auto 2rem',
+    }}
+  >
+    Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories, bring them to life with AI-crafted narratives, and create keepsakes your family will treasure for generations.
+  </p>
+  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <button
+      style={{
+        padding: '1rem 2rem',
+        backgroundColor: '#ff6200',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+      }}
+    >
+      Start Your First Storybook
+    </button>
+    <button
+      style={{
+        padding: '1rem 2rem',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+      }}
+    >
+      See How It Works
+    </button>
+  </div>
+</section>
 
       {/* Additional sections */}
       {/* Add your 'How It Works' section here */}
