@@ -51,7 +51,7 @@ export default function AppHome() {
         {/* Top Section */}
 <section
   style={{
-    backgroundImage: 'url(/images/hero-background.jpg)', // Ensure this image exists in public/images
+    backgroundImage: 'url(/public/background.jpg)', // Ensure this image exists in public/images
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     padding: '5rem 2rem',
