@@ -64,56 +64,83 @@ export default function AppHome() {
       </header>
 
       {/* Hero Section */}
-      <div
+<div
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/background-image.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '90vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    color: '#fff',
+    flexDirection: 'column',
+  }}
+>
+  <h1 style={{ fontSize: '4rem', fontFamily: "'Playfair Display', serif", fontWeight: '700' }}>
+    Treasured Tales
+  </h1>
+  <h2 style={{ fontSize: '1.5rem', fontFamily: "'Open Sans', sans-serif", marginBottom: '1.5rem' }}>
+    The Stories We Live
+  </h2>
+  <p style={{ maxWidth: '800px', fontSize: '1.2rem', marginBottom: '2rem' }}>
+    Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious
+    memories and create keepsakes your family will treasure for generations.
+  </p>
+  <div style={{ display: 'flex', gap: '1rem' }}>
+    <Link href="/start-storybook">
+      <a
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/background.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '90vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
+          padding: '1rem 2rem',
+          backgroundColor: '#ff6200',
           color: '#fff',
-          flexDirection: 'column',
+          textDecoration: 'none', // Removes underline
+          borderRadius: '4px',
+          fontWeight: 'bold',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem', // Space between text and image
         }}
       >
-        <h1 style={{ fontSize: '4rem', fontFamily: "'Playfair Display', serif", fontWeight: '700' }}>Treasured Tales</h1>
-        <h2 style={{ fontSize: '1.5rem', fontFamily: "'Open Sans', sans-serif", marginBottom: '1.5rem' }}>The Stories We Live</h2>
-        <p style={{ maxWidth: '800px', fontSize: '1.2rem', marginBottom: '2rem' }}>
-          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create keepsakes your family will treasure for generations.
-        </p>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Link href="/start-storybook">
-            <a
-              style={{
-                padding: '1rem 2rem',
-                backgroundColor: '#ff6200',
-                color: '#fff',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: 'bold',
-              }}
-            >
-              Start Your First Storybook
-            </a>
-          </Link>
-          <Link href="/how-it-works">
-            <a
-              style={{
-                padding: '1rem 2rem',
-                backgroundColor: '#333',
-                color: '#fff',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: 'bold',
-              }}
-            >
-              See How It Works
-            </a>
-          </Link>
-        </div>
-      </div>
+        <img
+          src="/icons/open-book-icon.svg"
+          alt="Open Book"
+          style={{
+            width: '20px',
+            height: '20px',
+          }}
+        />
+        Start Your First Storybook
+      </a>
+    </Link>
+    <Link href="/how-it-works">
+      <a
+        style={{
+          padding: '1rem 2rem',
+          backgroundColor: '#333',
+          color: '#fff',
+          textDecoration: 'none', // Removes underline
+          borderRadius: '4px',
+          fontWeight: 'bold',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem', // Space between text and image
+        }}
+      >
+        <img
+          src="/icons/magical-wand-icon.svg"
+          alt="Magical Wand"
+          style={{
+            width: '20px',
+            height: '20px',
+          }}
+        />
+        See How It Works
+      </a>
+    </Link>
+  </div>
+</div>
 
       {/* How It Works Section */}
       <section style={{ padding: '4rem 2rem', backgroundColor: theme === 'dark' ? '#444' : '#f9f9f9', textAlign: 'center' }}>
