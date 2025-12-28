@@ -148,3 +148,113 @@ export default function AppHome() {
     </div>
   );
 }
+{/* How It Works Section */}
+<section
+  style={{
+    padding: '4rem 2rem',
+    backgroundColor: theme === 'dark' ? '#f1f1f1' : '#f9f9f9',
+    textAlign: 'center',
+  }}
+>
+  <h2
+    style={{
+      fontSize: '2.5rem',
+      fontFamily: "'Playfair Display', serif",
+      fontWeight: 'bold',
+      marginBottom: '1rem',
+      color: theme === 'dark' ? '#444' : '#333',
+    }}
+  >
+    How It Works
+  </h2>
+  <p
+    style={{
+      fontSize: '1.2rem',
+      marginBottom: '3rem',
+      color: theme === 'dark' ? '#666' : '#555',
+    }}
+  >
+    Create beautiful storybooks in three simple steps
+  </p>
+
+  {/* Cards */}
+  <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+    {/* Card 1: Capture Moments */}
+    <div
+      style={{
+        backgroundColor: '#fff',
+        borderRadius: '12px',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+        padding: '2rem',
+        width: '300px',
+        textAlign: 'center',
+      }}
+    >
+      <img
+        src="/icons/camera-icon.svg"
+        alt="Capture Moments"
+        style={{
+          width: '50px',
+          height: '50px',
+          marginBottom: '1rem',
+        }}
+      />
+      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>Capture Moments</h3>
+      <p style={{ fontSize: '1rem', color: '#555' }}>
+        Upload photos and write short descriptions of your child's daily adventures, milestones, and precious memories.
+      </p>
+    </div>
+
+    {/* Card 2: AI Narrative */}
+    <div
+      style={{
+        backgroundColor: '#fff',
+        borderRadius: '12px',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+        padding: '2rem',
+        width: '300px',
+        textAlign: 'center',
+      }}
+    >
+      <img
+        src="/icons/magic-wand-icon.svg"
+        alt="AI Narrative"
+        style={{
+          width: '50px',
+          height: '50px',
+          marginBottom: '1rem',
+        }}
+      />
+      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>AI Narrative</h3>
+      <p style={{ fontSize: '1rem', color: '#555' }}>
+        Our AI weaves your collected moments into a cohesive, heartfelt story that brings your memories to life.
+      </p>
+    </div>
+
+    {/* Card 3: Download & Print */}
+    <div
+      style={{
+        backgroundColor: '#fff',
+        borderRadius: '12px',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+        padding: '2rem',
+        width: '300px',
+        textAlign: 'center',
+      }}
+    >
+      <img
+        src="/icons/download-icon.svg"
+        alt="Download & Print"
+        style={{
+          width: '50px',
+          height: '50px',
+          marginBottom: '1rem',
+        }}
+      />
+      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>Download & Print</h3>
+      <p style={{ fontSize: '1rem', color: '#555' }}>
+        Download your finished storybook as a print-ready PDF or digital version to treasure forever.
+      </p>
+    </div>
+  </div>
+</section>
