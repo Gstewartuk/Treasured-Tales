@@ -48,10 +48,10 @@ export default function AppHome() {
           </Link>
           <Link href="/get-started" passHref>
             <a
-   {/* Top Section */}
+  {/* Top Section */}
 <section
   style={{
-    backgroundImage: 'url(/background.jpg)', // Updated path to the background image
+    backgroundImage: 'url(/background.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     padding: '5rem 2rem',
