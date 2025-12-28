@@ -90,44 +90,60 @@ export default function AppHome() {
           Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create keepsakes
           your family will treasure for generations.
         </p>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Link href="/start-storybook" passHref>
-            <a
-              style={{
-                padding: '1rem 2rem',
-                backgroundColor: '#ff6200',
-                color: '#fff',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: 'bold',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}
-            >
-              <img src="/icons/open-book-icon.svg" alt="Open Book" style={{ width: '20px', height: '20px' }} />
-              Start Your First Storybook
-            </a>
-          </Link>
-          <Link href="/how-it-works" passHref>
-            <a
-              style={{
-                padding: '1rem 2rem',
-                backgroundColor: '#333',
-                color: '#fff',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: 'bold',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}
-            >
-              <img src="/icons/magical-wand-icon.svg" alt="Magical Wand" style={{ width: '20px', height: '20px' }} />
-              See How It Works
-            </a>
-          </Link>
-        </div>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+  <Link href="/start-storybook" passHref>
+    <a
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.5rem', // Space between text and icon
+        padding: '1rem 2rem',
+        backgroundColor: '#ff6200',
+        color: '#fff',
+        borderRadius: '4px',
+        fontWeight: 'bold',
+        textDecoration: 'none', // Remove underline
+        cursor: 'pointer',
+      }}
+    >
+      <img
+        src="/icons/open-book-icon.svg"
+        alt="Open Book"
+        style={{
+          width: '20px',
+          height: '20px',
+        }}
+      />
+      Start Your First Storybook
+    </a>
+  </Link>
+  <Link href="/how-it-works" passHref>
+    <a
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.5rem',
+        padding: '1rem 2rem',
+        backgroundColor: '#333',
+        color: '#fff',
+        borderRadius: '4px',
+        fontWeight: 'bold',
+        textDecoration: 'none', // Remove underline
+        cursor: 'pointer',
+      }}
+    >
+      <img
+        src="/icons/magical-wand-icon.svg"
+        alt="Magical Wand"
+        style={{
+          width: '20px',
+          height: '20px',
+        }}
+      />
+      See How It Works
+    </a>
+  </Link>
+</div>
       </div>
     </div>
   );
