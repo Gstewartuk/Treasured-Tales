@@ -1,3 +1,9 @@
+if (typeof window !== 'undefined') {
+  // Default to light mode if no theme is set
+  const defaultTheme = window.localStorage.getItem('theme') || 'light';
+  document.body.setAttribute('data-theme', defaultTheme);
+  window.isDarkMode = defaultTheme === 'dark';
+}
 import Head from 'next/head';
 import Link from 'next/link';
 
