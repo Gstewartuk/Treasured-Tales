@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link'; // Import Link for navigation
 
 export default function AppHome() {
   const [theme, setTheme] = useState('light'); // Default theme state
