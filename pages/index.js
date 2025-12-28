@@ -66,7 +66,7 @@ export default function AppHome() {
       {/* Hero Section */}
       <div
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/background-image.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/background.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           minHeight: '90vh',
