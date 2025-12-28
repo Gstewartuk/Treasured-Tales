@@ -43,10 +43,10 @@ export default function AppHome() {
           <button onClick={toggleTheme} style={{ fontSize: '1.2rem', cursor: 'pointer', backgroundColor: 'transparent', border: 'none' }}>
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
-          <Link href="/login">
+          <Link href="/login" passHref>
             <a style={{ color: theme === 'dark' ? '#fff' : '#333', fontWeight: '600', textDecoration: 'none' }}>Log In</a>
           </Link>
-          <Link href="/get-started">
+          <Link href="/get-started" passHref>
             <a
               style={{
                 padding: '0.5rem 1rem',
@@ -64,7 +64,22 @@ export default function AppHome() {
       </header>
 
       {/* Hero Section */}
-      <main style={{ padding: '2rem', textAlign: 'center' }}>
+      <div
+        style={{
+          backgroundImage: theme === 'dark'
+            ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/background.jpg')`
+            : `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/background.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '90vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: '#fff',
+          textAlign: 'center',
+        }}
+      >
         <h1 style={{ fontSize: '4rem', fontFamily: "'Playfair Display', serif", fontWeight: '700' }}>
           Treasured Tales
         </h1>
@@ -72,11 +87,11 @@ export default function AppHome() {
           The Stories We Live
         </h2>
         <p style={{ maxWidth: '800px', fontSize: '1.2rem', marginBottom: '2rem' }}>
-          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create
-          keepsakes your family will treasure for generations.
+          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create keepsakes
+          your family will treasure for generations.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-          <Link href="/start-storybook">
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <Link href="/start-storybook" passHref>
             <a
               style={{
                 padding: '1rem 2rem',
@@ -94,7 +109,7 @@ export default function AppHome() {
               Start Your First Storybook
             </a>
           </Link>
-          <Link href="/how-it-works">
+          <Link href="/how-it-works" passHref>
             <a
               style={{
                 padding: '1rem 2rem',
@@ -113,24 +128,7 @@ export default function AppHome() {
             </a>
           </Link>
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer
-        style={{
-          textAlign: 'center',
-          padding: '3rem 1rem',
-          backgroundColor: theme === 'dark' ? '#222' : '#f9f9f9',
-          color: theme === 'dark' ? '#fff' : '#555',
-        }}
-      >
-        <p style={{ fontSize: '1rem', color: theme === 'dark' ? '#aaa' : '#999' }}>
-          Made with ❤️ for families everywhere |{' '}
-          <Link href="/privacy">
-            <a style={{ color: '#8736de', textDecoration: 'none' }}>Privacy Policy</a>
-          </Link>
-        </p>
-      </footer>
+      </div>
     </div>
   );
 }
