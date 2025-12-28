@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function AppHome() {
-  const [theme, setTheme] = useState('light');
-  const isBrowser = typeof window !== 'undefined';
+  const [theme, setTheme] = useState('light'); // Default theme value
+  const isBrowser = typeof window !== 'undefined'; // Check if the window object exists
 
   useEffect(() => {
-    if (isBrowser) {
-      const storedTheme = localStorage.getItem('theme') || 'light';
+    if (isBrowser) {  // Ensure code runs only in a browser environment
+      const storedTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' theme
       document.body.setAttribute('data-theme', storedTheme);
       setTheme(storedTheme);
     }
-  }, [isBrowser]);
+  }, []); // Only run this effect on mount
 
   const toggleTheme = () => {
-    if (isBrowser) {
+    if (isBrowser) {  // Check again for browser environment
       const newTheme = theme === 'light' ? 'dark' : 'light';
       document.body.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
@@ -63,198 +63,8 @@ export default function AppHome() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <div
-        style={{
-          backgroundImage: theme === 'dark'
-            ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/background.jpg')`
-            : `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/background.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '90vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#fff',
-          textAlign: 'center',
-        }}
-      >
-        <h1 style={{ fontSize: '4rem', fontFamily: "'Playfair Display', serif", fontWeight: '700' }}>
-          Treasured Tales
-        </h1>
-        <h2 style={{ fontSize: '1.5rem', fontFamily: "'Open Sans', sans-serif", marginBottom: '1.5rem' }}>
-          The Stories We Live
-        </h2>
-        <p style={{ maxWidth: '800px', fontSize: '1.2rem', marginBottom: '2rem' }}>
-          Transform your child's real-life adventures into personalized storybooks made just for them. Preserve precious memories and create keepsakes
-          your family will treasure for generations.
-        </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-  <Link href="/start-storybook" passHref>
-    <a
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem', // Space between text and icon
-        padding: '1rem 2rem',
-        backgroundColor: '#ff6200',
-        color: '#fff',
-        borderRadius: '4px',
-        fontWeight: 'bold',
-        textDecoration: 'none', // Remove underline
-        cursor: 'pointer',
-      }}
-    >
-      <img
-        src="/icons/open-book-icon.svg"
-        alt="Open Book"
-        style={{
-          width: '20px',
-          height: '20px',
-        }}
-      />
-      Start Your First Storybook
-    </a>
-  </Link>
-  <Link href="/how-it-works" passHref>
-    <a
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        padding: '1rem 2rem',
-        backgroundColor: '#333',
-        color: '#fff',
-        borderRadius: '4px',
-        fontWeight: 'bold',
-        textDecoration: 'none', // Remove underline
-        cursor: 'pointer',
-      }}
-    >
-      <img
-        src="/icons/magical-wand-icon.svg"
-        alt="Magical Wand"
-        style={{
-          width: '20px',
-          height: '20px',
-        }}
-      />
-      See How It Works
-    </a>
-  </Link>
-</div>
-      </div>
+      {/* Additional sections */}
+      {/* Add your 'How It Works' section here */}
     </div>
   );
 }
-{/* How It Works Section */}
-<section
-  style={{
-    padding: '4rem 2rem',
-    backgroundColor: theme === 'dark' ? '#f1f1f1' : '#f9f9f9',
-    textAlign: 'center',
-  }}
->
-  <h2
-    style={{
-      fontSize: '2.5rem',
-      fontFamily: "'Playfair Display', serif",
-      fontWeight: 'bold',
-      marginBottom: '1rem',
-      color: theme === 'dark' ? '#444' : '#333',
-    }}
-  >
-    How It Works
-  </h2>
-  <p
-    style={{
-      fontSize: '1.2rem',
-      marginBottom: '3rem',
-      color: theme === 'dark' ? '#666' : '#555',
-    }}
-  >
-    Create beautiful storybooks in three simple steps
-  </p>
-
-  {/* Cards */}
-  <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-    {/* Card 1: Capture Moments */}
-    <div
-      style={{
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '2rem',
-        width: '300px',
-        textAlign: 'center',
-      }}
-    >
-      <img
-        src="/icons/camera-icon.svg"
-        alt="Capture Moments"
-        style={{
-          width: '50px',
-          height: '50px',
-          marginBottom: '1rem',
-        }}
-      />
-      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>Capture Moments</h3>
-      <p style={{ fontSize: '1rem', color: '#555' }}>
-        Upload photos and write short descriptions of your child's daily adventures, milestones, and precious memories.
-      </p>
-    </div>
-
-    {/* Card 2: AI Narrative */}
-    <div
-      style={{
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '2rem',
-        width: '300px',
-        textAlign: 'center',
-      }}
-    >
-      <img
-        src="/icons/magic-wand-icon.svg"
-        alt="AI Narrative"
-        style={{
-          width: '50px',
-          height: '50px',
-          marginBottom: '1rem',
-        }}
-      />
-      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>AI Narrative</h3>
-      <p style={{ fontSize: '1rem', color: '#555' }}>
-        Our AI weaves your collected moments into a cohesive, heartfelt story that brings your memories to life.
-      </p>
-    </div>
-
-    {/* Card 3: Download & Print */}
-    <div
-      style={{
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '2rem',
-        width: '300px',
-        textAlign: 'center',
-      }}
-    >
-      <img
-        src="/icons/download-icon.svg"
-        alt="Download & Print"
-        style={{
-          width: '50px',
-          height: '50px',
-          marginBottom: '1rem',
-        }}
-      />
-      <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>Download & Print</h3>
-      <p style={{ fontSize: '1rem', color: '#555' }}>
-        Download your finished storybook as a print-ready PDF or digital version to treasure forever.
-      </p>
-    </div>
-  </div>
-</section>
