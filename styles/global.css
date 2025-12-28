@@ -1,0 +1,12 @@
+a {
+  text-decoration: none !important; /* Force override browser defaults */
+}
+a:visited {
+  text-decoration: none !important; /* Ensure no underline for visited links */
+}
+a:hover {
+  text-decoration: none !important; /* Prevent underline on hover */
+}
+a:focus {
+  text-decoration: none !important; /* Prevent underline on focus */
+}
