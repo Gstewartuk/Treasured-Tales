@@ -1,104 +1,87 @@
-if (typeof window !== 'undefined') {
-  // Default to light mode if no theme is set
-  const defaultTheme = window.localStorage.getItem('theme') || 'light';
-  document.body.setAttribute('data-theme', defaultTheme);
-  window.isDarkMode = defaultTheme === 'dark';
-}
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 export default function AppHome() {
+  const [theme, setTheme] = useState('light'); // Default theme state
+  const isBrowser = typeof window !== 'undefined'; // Check if executing in the browser
+
+  // Initialize theme only if in the browser
+  useEffect(() => {
+    if (isBrowser) {
+      const storedTheme = localStorage.getItem('theme') || 'light'; // Retrieve or set default
+      document.body.setAttribute('data-theme', storedTheme); // Apply theme to body
+      setTheme(storedTheme); // Update state
+    }
+  }, [isBrowser]);
+
+  // Handle theme toggle
+  const toggleTheme = () => {
+    if (isBrowser) {
+      const newTheme = theme === 'light' ? 'dark' : 'light'; // Determine new theme
+      document.body.setAttribute('data-theme', newTheme); // Update theme attribute
+      localStorage.setItem('theme', newTheme); // Persist theme in local storage
+      setTheme(newTheme); // Update state
+    }
+  };
+
+  // Header Section
   return (
     <>
-      {/* SEO and Google Fonts */}
-      <Head>
-        <title>Treasured Tales - The Stories We Live</title>
-        <meta
-          name="description"
-          content="Transform your child's real-life adventures into personalized storybooks. Preserve precious memories, bring them to life with AI-crafted narratives, and create keepsakes your family will treasure for generations."
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      {/* Page Content */}
-      <div
+      <header
         style={{
-          fontFamily: "'DM Sans', sans-serif",
-          backgroundImage: 'url("/background.jpg")', // Replace with your image path
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          color: '#fff',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '1rem 2rem',
+          backgroundColor: theme === 'dark' ? '#333' : '#fff',
+          boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
+          color: theme === 'dark' ? '#fff' : '#333',
         }}
       >
-        {/* Header Section */}
-<header
-  style={{
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '1rem 2rem',
-    backgroundColor: window.isDarkMode ? '#333' : '#fff',
-    boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
-    color: window.isDarkMode ? '#fff' : '#333',
-  }}
->
-  {/* Logo */}
-  <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
-    Memory Weaver
-  </h1>
+        {/* Logo */}
+        <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
+          Memory Weaver
+        </h1>
 
-  {/* Navigation */}
-  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-    {/* Light/Dark Mode Toggle */}
-    <button
-      onClick={() => {
-        const isDarkMode = document.body.getAttribute('data-theme') === 'dark';
-        if (isDarkMode) {
-          document.body.setAttribute('data-theme', 'light');
-          window.isDarkMode = false;
-        } else {
-          document.body.setAttribute('data-theme', 'dark');
-          window.isDarkMode = true;
-        }
-      }}
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'transparent',
-        border: 'none',
-        fontSize: '1.2rem',
-        cursor: 'pointer',
-        color: window.isDarkMode ? '#fff' : '#333',
-      }}
-    >
-      🌙/☀️
-    </button>
+        {/* Navigation */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {/* Light/Dark Mode Toggle */}
+          <button
+            onClick={toggleTheme}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              fontSize: '1.2rem',
+              cursor: 'pointer',
+              color: theme === 'dark' ? '#fff' : '#333',
+            }}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
 
-    {/* Log In Link */}
-    <a href="/login" style={{ color: window.isDarkMode ? '#fff' : '#333', textDecoration: 'none', fontWeight: '600' }}>
-      Log In
-    </a>
+          {/* Log In Link */}
+          <a href="/login" style={{ color: theme === 'dark' ? '#fff' : '#333', textDecoration: 'none', fontWeight: '600' }}>
+            Log In
+          </a>
 
-    {/* Get Started Button */}
-    <a
-      href="/get-started"
-      style={{
-        padding: '0.5rem 1rem',
-        backgroundColor: '#ff6200',
-        color: '#fff',
-        textDecoration: 'none',
-        borderRadius: '4px',
-        fontWeight: 'bold',
-      }}
-    >
-      Get Started
-    </a>
-  </div>
-</header>
+          {/* Get Started Button */}
+          <a
+            href="/get-started"
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: '#ff6200',
+              color: '#fff',
+              textDecoration: 'none',
+              borderRadius: '4px',
+              fontWeight: 'bold',
+            }}
+          >
+            Get Started
+          </a>
+        </div>
+      </header>
+    </>
+  );
+}
         <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
           <section style={{ textAlign: 'center', marginBottom: '4rem' }}>
