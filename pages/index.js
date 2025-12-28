@@ -175,3 +175,6 @@ export default function AppHome() {
     </div>
   </div>
 </section>
+178|   </div> {/* Final div wrapping the content */}
+179| );
+180| }
