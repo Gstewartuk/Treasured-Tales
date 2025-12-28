@@ -28,10 +28,63 @@ export default function AppHome() {
         }}
       >
         {/* Header Section */}
-        <header style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-          <h1 style={{ fontSize: '4rem', margin: 0 }}>Treasured Tales</h1>
-          <p style={{ fontSize: '1.5rem', marginTop: '1rem' }}>The Stories We Live</p>
-        </header>
+<header
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '1rem 2rem',
+    backgroundColor: '#fff',
+    boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
+  }}
+>
+  {/* Logo */}
+  <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif", color: '#333' }}>
+    Memory Weaver
+  </h1>
+
+  {/* Navigation */}
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    {/* Light/Dark Mode Toggle */}
+    <button
+      onClick={() => {
+        const theme = document.body.classList.toggle('dark-mode') ? 'dark' : 'light';
+        document.body.setAttribute('data-theme', theme);
+      }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent',
+        border: 'none',
+        fontSize: '1.2rem',
+        cursor: 'pointer',
+      }}
+    >
+      🌙/☀️
+    </button>
+
+    {/* Log In Link */}
+    <a href="/login" style={{ color: '#333', textDecoration: 'none', fontWeight: '600' }}>
+      Log In
+    </a>
+
+    {/* Get Started Button */}
+    <a
+      href="/get-started"
+      style={{
+        padding: '0.5rem 1rem',
+        backgroundColor: '#ff6200',
+        color: '#fff',
+        textDecoration: 'none',
+        borderRadius: '4px',
+        fontWeight: 'bold',
+      }}
+    >
+      Get Started
+    </a>
+  </div>
+</header>
 
         <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
