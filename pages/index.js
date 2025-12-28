@@ -67,8 +67,8 @@ export default function AppHome() {
       <div
         style={{
           backgroundImage: theme === 'dark'
-            ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/background-image.jpg')`
-            : `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/background-image.jpg')`,
+            ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/background.jpg')`
+            : `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/background.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '90vh',
