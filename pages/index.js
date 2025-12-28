@@ -231,5 +231,5 @@ export default function AppHome() {
   </div>
 </section>
 </div>
-)
+);
 }
