@@ -34,12 +34,13 @@ export default function AppHome() {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '1rem 2rem',
-    backgroundColor: '#fff',
+    backgroundColor: window.isDarkMode ? '#333' : '#fff',
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
+    color: window.isDarkMode ? '#fff' : '#333',
   }}
 >
   {/* Logo */}
-  <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif", color: '#333' }}>
+  <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
     Memory Weaver
   </h1>
 
@@ -48,8 +49,14 @@ export default function AppHome() {
     {/* Light/Dark Mode Toggle */}
     <button
       onClick={() => {
-        const theme = document.body.classList.toggle('dark-mode') ? 'dark' : 'light';
-        document.body.setAttribute('data-theme', theme);
+        const isDarkMode = document.body.getAttribute('data-theme') === 'dark';
+        if (isDarkMode) {
+          document.body.setAttribute('data-theme', 'light');
+          window.isDarkMode = false;
+        } else {
+          document.body.setAttribute('data-theme', 'dark');
+          window.isDarkMode = true;
+        }
       }}
       style={{
         display: 'flex',
@@ -59,13 +66,14 @@ export default function AppHome() {
         border: 'none',
         fontSize: '1.2rem',
         cursor: 'pointer',
+        color: window.isDarkMode ? '#fff' : '#333',
       }}
     >
       🌙/☀️
     </button>
 
     {/* Log In Link */}
-    <a href="/login" style={{ color: '#333', textDecoration: 'none', fontWeight: '600' }}>
+    <a href="/login" style={{ color: window.isDarkMode ? '#fff' : '#333', textDecoration: 'none', fontWeight: '600' }}>
       Log In
     </a>
 
@@ -85,7 +93,6 @@ export default function AppHome() {
     </a>
   </div>
 </header>
-
         <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
           <section style={{ textAlign: 'center', marginBottom: '4rem' }}>
